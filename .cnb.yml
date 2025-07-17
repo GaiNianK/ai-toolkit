@@ -1,0 +1,14 @@
+$:
+  vscode:
+    - docker:
+        image:
+          name: 
+          # 使用 CI 构建时默认注入的环境变量
+          dockerUser: $CNB_TOKEN_USER_NAME
+          dockerPassword: $CNB_TOKEN
+      runner:
+        cpus: 16
+        tags: cnb:arch:amd64:gpu
+      services:
+        - vscode
+        - docker
